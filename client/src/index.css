@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #16213e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0f3460;
+  border-radius: 3px;
+}
+
+.policy-liberal {
+  background: linear-gradient(135deg, #1565C0, #42A5F5);
+  border: 2px solid #64B5F6;
+}
+
+.policy-fascist {
+  background: linear-gradient(135deg, #B71C1C, #EF5350);
+  border: 2px solid #E57373;
+}
+
+.policy-slot {
+  @apply w-12 h-16 rounded-lg border-2 border-dashed border-gray-600 flex items-center justify-center;
+}
+
+.policy-slot.filled-liberal {
+  @apply border-solid border-liberal bg-liberal/30;
+}
+
+.policy-slot.filled-fascist {
+  @apply border-solid border-fascist bg-fascist/30;
+}
+
+.btn-primary {
+  @apply px-6 py-3 bg-board-surface text-white font-semibold rounded-lg
+    hover:bg-blue-800 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-danger {
+  @apply px-4 py-2 bg-fascist-dark text-white font-semibold rounded-lg
+    hover:bg-red-800 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-success {
+  @apply px-4 py-2 bg-green-700 text-white font-semibold rounded-lg
+    hover:bg-green-600 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.card {
+  @apply bg-board-card rounded-xl p-6 border border-gray-700/50;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(33, 150, 243, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(33, 150, 243, 0.6); }
+}
+
+.glow-liberal {
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow-red {
+  0%, 100% { box-shadow: 0 0 5px rgba(229, 57, 53, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(229, 57, 53, 0.6); }
+}
+
+.glow-fascist {
+  animation: pulse-glow-red 2s infinite;
+}
